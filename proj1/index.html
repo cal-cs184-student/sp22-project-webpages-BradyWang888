@@ -18,7 +18,21 @@
 			the triangle according to the formula described in the lecture(if all 3 line equations return negative/positive at the same time then it is 
 			inside the triangle). Then I call fill_pixel() on that pixel.
 		<br> 2: As described above.
-		<br> 3: <img src="./1.png", alt="task1">
+		<br> 3: 
+		<img src="./1.png", alt="task1">
+		</p>
+		<h1>
+		Task2:
+		</h1>
+		<p>
+		1:First I changed the sample_buffer so that it contains width*height*sample_rate elements, Then in rasterize_triangle(),I just evalute each "sub-pixel",
+			if the sub-pixel is inside the triangle, then I just record the color in the sample_buffer. Then, in resolve_to_framebuffer(), I calculate the 
+			average color of sub-pixels inside a real pixel. I also update fill_pixel so that the function modify sample_rate number of elements in sample_buffer
+			on one call. Supersampling is useful for antialiasing because it rasterize the averge color on the edge of the triangle.
+		<br> 2: When sample rate increase, more "sub-pixels" are taken into account, which makes the edge smoother.
+		<br><img src="./2-1.png", alt="1">
+		<br><img src="./2-2.png", alt="2">
+		<br><img src="./2-3.png", alt="3">
 		</p>
 	</body>
 </html>
