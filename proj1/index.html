@@ -52,5 +52,21 @@
 		<br>  2:
 		<br> <img src="./4-2.png", alt="2">
 		</p>
+		<h1>
+		Task5:
+		</h1>
+		<p>
+		1:pixel sampling is sampling the color of the pixel in screen space from the texture. In rasterize_textured_triangle(), I first convert the pixel 
+			coordinates into barycentric coordinates and call tex.sample() to get the corresponding color from texture. I also implemented two sampling methods
+			nearest and bilinear. For nearst, I just round the barycentric coordinates; for bilinear, I did bilinear filtering on the surrounding 4 points
+			to get the value.
+		<br>2: From top to bottom, nearst 1/16, bilinear 1/16
+		<br>:<img src="./5-1.png", alt="1">
+		<br>:<img src="./5-2.png", alt="1">
+			<br>:<img src="./5-3.png", alt="1">
+			<br>:<img src="./5-4.png", alt="1">
+		<br>3:the bilinear one is relatively smoother than nearst. There could be large difference when the graph has sharp edges. The nearst may map the pixel to
+			the wrong color while the bilinear will take surrounding pixels into account.
+		</p>
 	</body>
 </html>
