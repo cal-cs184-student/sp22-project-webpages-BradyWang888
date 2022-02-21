@@ -68,5 +68,22 @@
 		<br>3:the bilinear one is relatively smoother than nearst. There could be large difference when the graph has sharp edges. The nearst may map the pixel to
 			the wrong color while the bilinear will take surrounding pixels into account.
 		</p>
+		<h1>
+		Task6:
+		</h1>
+		<p>
+		1:level sampling is sample at different levels of mipmap(different resolutions of texture). For texture mapping, I first implemented the get_level()
+			method according to spec to return a float number of level, then for L_ZERO, I just call the sample method with level 0; for L_NEAREST,
+			I just round the float number of level to the nearst integer; for L_LINEAR, I first get the colors of nearby levels by making corresponding sampling
+			function calls, Then I do one interpolation based on the distance between float number of level and the two integer levels(similar to 
+			bilinear sampling) to get the color.
+		<br>2: I think the number of samples per pixel method has greatest power of antialiasing but cost more memory and is slow; level sampling has the least
+			power of antialising but also is fast and cost least memory; pixel sampling is somewhere inbetween those two methods.
+		<cr>3: Below are the 4 images.L_ZERO and P_NEAREST, L_ZERO and P_LINEAR, L_NEAREST and P_NEAREST, L_NEAREST and P_LINEAR
+		<br>:<img src="./6-1.png", alt="1">
+		<br>:<img src="./6-2.png", alt="1">
+		<br>:<img src="./6-3.png", alt="1">
+		<br>:<img src="./6-4.png", alt="1">
+		</p>
 	</body>
 </html>
